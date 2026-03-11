@@ -1,14 +1,14 @@
-# PFAS Usage-Burden Model (Lithography-Focused)
+# PFAS Usage-Burden Model (Lithography Section)
 
 ## 1. Project Overview
 This project models PFAS use and environmental burden in a lithography-focused pathway linked to server/GPU scale growth.
 
 The workflow is organized into three computational stages:
-1. **Server projection**: estimates quarterly server-scale growth with Monte Carlo sampling.
+1. **Server projection**: estimates quarterly server-scale growth with Monte Carlo sampling. This module was partially inspired by the methodology described in https://doi.org/10.1038/s43588-024-00712-6 and related materials available at https://zenodo.org/records/13790035.
 2. **Emission model**: converts scale into lithography PFAS usage, then maps usage to emissions across media.
 3. **Burden model**: applies treatment/destruction burden factors to emissions and calculates burden outputs.
 
-The model is configured to run from **2020Q1 to 2030Q4** (as defined in the input data), and outputs Excel files for downstream analysis and plotting.
+The model results focus on **2025Q1 to 2030Q4** (as defined in the input data), and outputs Excel files for downstream analysis and plotting.
 
 ## 2. Repository Structure
 At the top level:
@@ -20,7 +20,7 @@ At the top level:
 - `Excel results/`
   - All model output Excel files are written here.
 - `Data for figures/`
-  - Curated data prepared for manuscript plotting.
+  - Organized data prepared for manuscript plotting.
 - `Premise-IAM model/`
   - Materials/scripts related to IAM-driven background database updating using premise.
 - `Economic model/`
@@ -50,15 +50,15 @@ Inside `Data input/`:
 All outputs are written to `Excel results/`:
 
 - `Result.xlsx`
-  - Core server projection summary (`mean`, `std`, cumulative stats, outflow stats).
+  - Core photolithography manufacturing summary.
 - `PFAS_Litho_2021_2030.xlsx`
   - Lithography usage and emissions by medium, plus quarterly computing power summary.
-- `toxicity-PFOA-PFOS.xlsx`
-  - Toxicity summary outputs.
 - `burden-type.xlsx`
   - Burden results by treatment medium (gas/solid/solvent/water).
 - `burden-process.xlsx`
   - Burden results by lithography component/process category.
+- `toxicity-PFOA-PFOS.xlsx`
+  - Toxicity summary outputs.
 
 ## 6. How to Run
 Run from the project root directory:
@@ -80,17 +80,14 @@ done
 ```
 
 ## 7. Environment Requirements
-Typical Python dependencies:
 
+Note that the LCA results generated using premise and ecoinvent have already been integrated and provided in Excel format. Therefore, running premise or IAM models is not required here;
+
+Typical Python dependencies:
 - `numpy`
 - `pandas`
 - `xlrd`
 
-Install example:
-
-```bash
-pip install numpy pandas xlrd
-```
 
 ## 8. Model Logic Notes
 - Current scope is **lithography-focused PFAS usage and burden**.
@@ -115,16 +112,7 @@ Core concept:
 For premise details, see:
 - https://github.com/polca/premise
 
-## 11. Troubleshooting
-- If input files are not found:
-  - Confirm `Data input/data.xls` and `Data input/destruction summary.xls` exist.
-- If output files are missing:
-  - Confirm script completes and prints `done`.
-  - Check write permissions for `Excel results/`.
-- If import errors occur:
-  - Install missing packages in the active Python environment.
-
-## 12. Suggested Workflow
+## 11. Suggested Workflow
 1. Update assumptions and parameters in `Data input/*.xls`.
 2. Run the main script.
 3. Review outputs in `Excel results/`.
