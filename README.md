@@ -1,14 +1,15 @@
-# PFAS Usage-Burden Model (Lithography Section)
+# PFAS Usage-Burden Model (Lithography of GPU manufacturing in GenAI)
 
 ## 1. Project Overview
 This project models PFAS use and environmental burden in a lithography-focused pathway linked to server/GPU scale growth.
 
 The workflow is organized into three computational stages:
-1. **Server projection**: estimates quarterly server-scale growth with Monte Carlo sampling. This module was partially inspired by the methodology described in https://doi.org/10.1038/s43588-024-00712-6 and related materials available at https://zenodo.org/records/13790035.
-2. **Emission model**: converts scale into lithography PFAS usage, then maps usage to emissions across media.
-3. **Burden model**: applies treatment/destruction burden factors to emissions and calculates burden outputs.
+1. **Server projection**: estimates quarterly server-scale growth with Monte Carlo sampling.
+   <sub>This module was partially inspired by the methodology described in https://doi.org/10.1038/s43588-024-00712-6 and related materials available at https://zenodo.org/records/13790035.
+3. **Emission model**: converts scale into lithography PFAS usage, then maps usage to emissions across media.
+4. **Burden model**: applies treatment/destruction burden factors to emissions and calculates burden outputs.
 
-The model results focus on **2025Q1 to 2030Q4** (as defined in the input data), and outputs Excel files for downstream analysis and plotting.
+The model results focus on 2025 to 2030, and outputs Excel files for downstream analysis and plotting.
 
 ## 2. Repository Structure
 At the top level:
