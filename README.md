@@ -6,7 +6,7 @@ This project links the expansion of generative artificial intelligence (AI) to t
 
 The analysis covers six photolithography material classes: photoacid generators, surfactants, top antireflective coatings, resist polymer-bound PFAS, immersion topcoats, and polybenzoxazole/polyimide materials. Emissions are allocated to wastewater, solvent waste, gaseous waste and solid waste. Environmental and economic calculations evaluate their management through ion-exchange capture and incineration.
 
-The AI demand and procurement calculation includes the 2020–2030 trajectory, while the main manufacturing-attribution and downstream burden modules report 2025–2030 results. Aggressive, moderate and conservative AI deployment scenarios use the same calculation framework with different user and model-growth trajectories.
+The time scale of the results: 2025–2030. Aggressive, moderate and conservative AI deployment scenarios use the same calculation framework with different user and model-growth trajectories.
 
 This repository contains the main calculation modules and the core decision chain of the PFAS toxicity agent. Input Excel workbooks, numerical result datasets and figure workbooks are being prepared separately; their locations and roles are documented in the corresponding directories.
 
